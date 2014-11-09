@@ -1,2 +1,2 @@
-HCI
+HCI Project
 ===
