@@ -22,9 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.example.hci.SearchGroupActivity">
-            </activity>
+        <activity android:name="com.example.hci.SearchGroupActivity"></activity>
+        <activity android:name="com.example.hci.SignInActivity"></activity>
+        <activity android:name="com.example.hci.UserScheduleActivity"></activity>
+        <activity android:name="com.example.hci.CreateGroupActivity"></activity>
+        
     </application>
 
 </manifest>

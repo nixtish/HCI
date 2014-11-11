@@ -63,21 +63,22 @@ public class MainActivity extends Activity implements OnClickListener
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+				
+		// Find a better way to implement intents
 		
 		switch(v.getId()){
 		
 		case R.id.button_searchGroup:
 			Intent i1 = new Intent(this, SearchGroupActivity.class);
-			startActivityForResult(i1, 0);
-		//	Toast.makeText(getApplicationContext(), "Search Clicked", Toast.LENGTH_SHORT).show();
+			startActivity(i1);
 			break;
 		case R.id.button_createGroup:
-		//	Intent i2 = new Intent(this, SearchGroupActivity.class);
-		//	Toast.makeText(getApplicationContext(), "Create Clicked", Toast.LENGTH_SHORT).show();
+			Intent i2 = new Intent(this, CreateGroupActivity.class);
+			startActivity(i2);
 			break;
 		case R.id.button_userSchedule:
-		//	Toast.makeText(getApplicationContext(), "Schedule Clicked", Toast.LENGTH_SHORT).show();
+			Intent i3 = new Intent(this, UserScheduleActivity.class);
+			startActivity(i3);
 			break;
 		case R.id.button_later:
 		//	Toast.makeText(getApplicationContext(), "Later Clicked", Toast.LENGTH_SHORT).show();
