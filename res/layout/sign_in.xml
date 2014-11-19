@@ -29,6 +29,7 @@
     <!--  
     <Button
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="240dp"
         android:text="Go to home page" />
 	-->
@@ -41,5 +42,16 @@
             android:layout_weight="1"
             android:textSize="18sp"
             android:paddingTop="16dp"/>
+=======
+        android:layout_height="match_parent"
+        android:text="Go to home page"/>
+    
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />      
+    
+   
+>>>>>>> b0434eb7f8574da2a8c659fa9354b095f8557658
     
 </LinearLayout>

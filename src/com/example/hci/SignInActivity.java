@@ -1,5 +1,6 @@
 package com.example.hci;
 
+<<<<<<< HEAD
 import android.content.Context;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
@@ -13,6 +14,27 @@ import android.widget.Toast;
 import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.Dialog;
+=======
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+
+public class SignInActivity extends Activity implements OnClickListener{
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.sign_in);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
+	}
+>>>>>>> b0434eb7f8574da2a8c659fa9354b095f8557658
 
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;

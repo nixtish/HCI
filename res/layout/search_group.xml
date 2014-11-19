@@ -1,11 +1,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+<<<<<<< HEAD
     android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+=======
+    
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+>>>>>>> b0434eb7f8574da2a8c659fa9354b095f8557658
     
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="test"  />
+        android:text="Search Group"  />
     
 </LinearLayout>
