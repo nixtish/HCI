@@ -1,5 +1,6 @@
 package com.example.hci;
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
+import com.google.android.gms.auth.UserRecoverableAuthException;
+import com.google.android.gms.common.AccountPicker;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+
 
 public class MainActivity extends Activity implements OnClickListener
 {
@@ -73,7 +80,9 @@ public class MainActivity extends Activity implements OnClickListener
 		//	Toast.makeText(getApplicationContext(), "Search Clicked", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.button_createGroup:
-		//	Intent i2 = new Intent(this, SearchGroupActivity.class);
+			Intent i2 = new Intent(this, SignInActivity.class);
+			i2.putExtra(SignInActivity.TYPE_KEY, SignInActivity.Type.BACKGROUND.name());
+			startActivity(i2);
 		//	Toast.makeText(getApplicationContext(), "Create Clicked", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.button_userSchedule:

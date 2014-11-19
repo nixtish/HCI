@@ -3,10 +3,13 @@
 
     <string name="app_name">HCI</string>
     <string name="hello_world">Hello world!</string>
+    <string name="greet_me">Greet Me</string>
     <string name="action_settings">Settings</string>
     <string name="button_searchGroup">Search Group</string>
     <string name="button_createGroup">Create Group</string>
     <string name="button_Schedule">Schedule</string>
     <string name="button_later">Later</string>
+    
+    
 
 </resources>
