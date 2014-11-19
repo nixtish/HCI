@@ -73,32 +73,20 @@ public class MainActivity extends Activity implements OnClickListener
 				
 		// Find a better way to implement intents
 		
-		switch(v.getId()){
-		
-		case R.id.button_searchGroup:
+		int id = v.getId();
+		if (id == R.id.button_searchGroup) {
 			Intent i1 = new Intent(this, SearchGroupActivity.class);
 			startActivity(i1);
-			break;
-		case R.id.button_createGroup:
-<<<<<<< HEAD
+		} else if (id == R.id.button_createGroup) {
 			Intent i2 = new Intent(this, SignInActivity.class);
 			i2.putExtra(SignInActivity.TYPE_KEY, SignInActivity.Type.BACKGROUND.name());
 			startActivity(i2);
-		//	Toast.makeText(getApplicationContext(), "Create Clicked", Toast.LENGTH_SHORT).show();
-=======
-			Intent i2 = new Intent(this, CreateGroupActivity.class);
-			startActivity(i2);
->>>>>>> b0434eb7f8574da2a8c659fa9354b095f8557658
-			break;
-		case R.id.button_userSchedule:
+		} else if (id == R.id.button_userSchedule) {
 			Intent i3 = new Intent(this, UserScheduleActivity.class);
 			startActivity(i3);
-			break;
-		case R.id.button_later:
+		} else if (id == R.id.button_later) {
 			Intent i4 = new Intent(this, SignInActivity.class);
 			startActivity(i4);
-		//	Toast.makeText(getApplicationContext(), "Later Clicked", Toast.LENGTH_SHORT).show();
-			break;
 		}
 		
 	}
