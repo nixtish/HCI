@@ -30,9 +30,9 @@
         android:text="@string/button_Schedule" />
     
     <Button
-        android:id="@+id/button_later"
+        android:id="@+id/button_mygroups"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_later"  />
+        android:text="@string/button_mygroups"  />
         
 </LinearLayout>

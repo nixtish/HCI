@@ -25,11 +25,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data android:name="com.google.android.gms.version"
         android:value="@integer/google_play_services_version" />
       
         <activity android:name="com.example.hci.SearchGroupActivity"></activity>
         <activity android:name="com.example.hci.SignInActivity"></activity>
+        
+
         <activity android:name="com.example.hci.UserScheduleActivity"></activity>
         <activity android:name="com.example.hci.CreateGroupActivity"></activity>
         

@@ -1,14 +1,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
     
-    <TextView
-        android:layout_width="wrap_content"
+      
+    <EditText
+        android:id="@+id/enter_group_name_to_create"
+        android:layout_width = "fill_parent"
         android:layout_height="wrap_content"
-        android:text="Create Group"  />>
+        android:hint = "Enter group name" />    
+        
+    <Spinner
+        android:id="@+id/create_group_class_selector"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Class"/>
+    
+    <Spinner
+        android:id="@+id/create_group_location_selection"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text = "Select location"  />
+    
+    <Button
+        android:id="@+id/button_to_add_people"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Add participants" />
+    
+        
+    <Button
+        android:id="@+id/button_to_create_group"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text = "Create Group" />
     
 </LinearLayout>

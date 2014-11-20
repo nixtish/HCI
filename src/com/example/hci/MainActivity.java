@@ -37,7 +37,7 @@ public class MainActivity extends Activity implements OnClickListener
 		btn_search_group = (Button) findViewById(R.id.button_searchGroup);
 		btn_create_group = (Button) findViewById(R.id.button_createGroup);
 		btn_user_schedule= (Button) findViewById(R.id.button_userSchedule);
-		btn_later        = (Button) findViewById(R.id.button_later);
+		btn_later        = (Button) findViewById(R.id.button_mygroups);
 		
 		
 		
@@ -78,13 +78,13 @@ public class MainActivity extends Activity implements OnClickListener
 			Intent i1 = new Intent(this, SearchGroupActivity.class);
 			startActivity(i1);
 		} else if (id == R.id.button_createGroup) {
-			Intent i2 = new Intent(this, SignInActivity.class);
-			i2.putExtra(SignInActivity.TYPE_KEY, SignInActivity.Type.BACKGROUND.name());
+			Intent i2 = new Intent(this, CreateGroupActivity.class);
+		//	i2.putExtra(this, CreateGroupActivity.class);
 			startActivity(i2);
 		} else if (id == R.id.button_userSchedule) {
 			Intent i3 = new Intent(this, UserScheduleActivity.class);
 			startActivity(i3);
-		} else if (id == R.id.button_later) {
+		} else if (id == R.id.button_mygroups) {
 			Intent i4 = new Intent(this, SignInActivity.class);
 			startActivity(i4);
 		}
