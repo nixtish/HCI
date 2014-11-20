@@ -26,6 +26,6 @@ proguard/
 *.log
 
 #.DSstore files
-*.DS_Store
+.DS_Store
 
 *.settings
