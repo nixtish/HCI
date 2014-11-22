@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+        name="string_array_demo_search">
+        
+        <item>CSC 554</item>
+        <item>CSC 505</item>
+        <item>CSC 510</item>
+        
+    </string-array>
+</resources>

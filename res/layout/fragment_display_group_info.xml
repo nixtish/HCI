@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:minWidth="1000dp"  
+    android:minHeight="1000dp">
+    
+    <TextView
+        android:id="@+id/txtvw_display_group_info_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment 2" />
+       
+    
+</LinearLayout>

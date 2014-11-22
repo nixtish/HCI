@@ -1,6 +1,5 @@
 package com.example.hci;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,14 +16,13 @@ import com.google.android.gms.auth.UserRecoverableAuthException;
 import com.google.android.gms.common.AccountPicker;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
-
 public class MainActivity extends Activity implements OnClickListener
 {
 
 	private Button btn_search_group;
 	private Button btn_create_group;
 	private Button btn_user_schedule;
-	private Button btn_later;
+	private Button btn_mygroups;
 //	private ImageView imgview_main;
 	
 	@Override
@@ -37,14 +35,12 @@ public class MainActivity extends Activity implements OnClickListener
 		btn_search_group = (Button) findViewById(R.id.button_searchGroup);
 		btn_create_group = (Button) findViewById(R.id.button_createGroup);
 		btn_user_schedule= (Button) findViewById(R.id.button_userSchedule);
-		btn_later        = (Button) findViewById(R.id.button_mygroups);
-		
-		
+		btn_mygroups     = (Button) findViewById(R.id.button_mygroups);
 		
 		btn_create_group.setOnClickListener(this);
 		btn_search_group.setOnClickListener(this);
 		btn_user_schedule.setOnClickListener(this);
-		btn_later.setOnClickListener(this);
+		btn_mygroups.setOnClickListener(this);
 	
 	}
 

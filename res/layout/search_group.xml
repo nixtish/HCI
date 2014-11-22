@@ -1,20 +1,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:id="@+id/search_group_container"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"   >
     
-        
+             
     <Spinner
-        android:id="@+id/class_selector_search_group"
+        android:id="@+id/spinner_class_selector_search_group"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
     
-    
+      
     <Button 
-        android:id="@+id/button_request_to_join_group"
+        android:id="@+id/button_to_execute_group_search"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text = "Join group" />"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_selector"
+        android:text = "Search group" />"
+        
 		    
 </LinearLayout>

@@ -1,0 +1,10 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <!-- Populate the layout with a listview of all groups and a single cross button next to each group to leave the group 
+         Should also make use of the DisplayGroupInfo fragment-->
+    
+    </LinearLayout>
