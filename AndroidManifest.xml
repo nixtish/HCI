@@ -33,9 +33,7 @@
             	  android:label="Search Group"> </activity>
         <activity android:name="com.example.hci.SignInActivity"></activity>
         
-
-
-        
+       
         <activity android:name="com.example.hci.AddGroupMembersActivity"
                   android:label ="Add Members"></activity>
 
