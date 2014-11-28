@@ -16,9 +16,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -47,8 +49,11 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 	private TextView lbl_grp_name;
 	private TextView lbl_class_name;
 	private TextView lbl_location_name;
-	private TextView lbl_time;
+	private TextView lbl_day;
 	private EditText edit_text_time;
+	private EditText edit_text_day;
+	private Spinner spnr_select_day;
+	private EditText edit_text_additional_comments;
 	
 	public static List<Model> members = new ArrayList<Model>();
 	private ArrayList<String> groupMembers = new ArrayList<String>();
@@ -59,18 +64,29 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 	private static final String TAG = "MyActivity";
 	ParseObject group;
 	
+	// Code to populate day spinner
+	String[] day_selector = new String[] { "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday" };
+	public void populateDaySpinner()
+
+	{
+
+	      ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>
+	                    (this, android.R.layout.simple_spinner_item,day_selector);
+          dataAdapter.setDropDownViewResource
+	                    (android.R.layout.simple_spinner_dropdown_item);
+                  spnr_select_day.setAdapter(dataAdapter);
+
+	       	}
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		
 		setContentView(R.layout.create_group);
-
 		
 		ActionBar actionBar = getActionBar();
 		actionBar.setBackgroundDrawable(new ColorDrawable(0xFF660200));
-		
 		
 		et_group_name = (EditText) findViewById(R.id.enter_group_name_to_create);
 		bt_create_group = (Button)findViewById(R.id.button_to_create_group);
@@ -81,9 +97,10 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 		lbl_class_name = (TextView)findViewById(R.id.txtv_select_class_label);
 		lbl_grp_name = (TextView)findViewById(R.id.txtv_enter_group_name_label);
 		lbl_location_name = (TextView)findViewById(R.id.txtv_select_location_label);
-	//	lbl_time = (TextView)findViewById(R.id.txtv_select_time_label);
-		
-	//	edit_text_time = (EditText)findViewById(R.id.enter_select_time);
+		lbl_day = (TextView)findViewById(R.id.txtv_select_day_label);
+		spnr_select_day = (Spinner)findViewById(R.id.spinner_select_day);
+		edit_text_time = (EditText)findViewById(R.id.edittxt_enter_time);
+		edit_text_additional_comments = (EditText)findViewById(R.id.edit_text_additional_comments);
 		
 		previouslyFetchedPosition = -1;
 		Log.d(TAG,"class list ::: " + MainActivity.classList);
@@ -95,7 +112,10 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
         locations_spinner.setOnItemSelectedListener(this);
 		populateClassSpinner();
 		populateLocationsSpinner();
+		populateDaySpinner();
 		generateListView();
+		
+		
 		
 		
 	}
@@ -148,7 +168,6 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 			Intent i = new Intent(this,AddGroupMembersActivity.class);
 			
 			startActivityForResult(i,1);
-
 
 		}
 		
@@ -286,3 +305,5 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 	}
 	
 }
+
+

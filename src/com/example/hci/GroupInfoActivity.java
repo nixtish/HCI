@@ -53,7 +53,7 @@ public class GroupInfoActivity extends Activity implements OnClickListener {
 		
 		
 		ActionBar actionBar = getActionBar();
-		 actionBar.setBackgroundDrawable(new ColorDrawable(0xFF660200));
+	    actionBar.setBackgroundDrawable(new ColorDrawable(0xFF660200));
 		 
 		 
 		txtv_group_name_label = (TextView)findViewById(R.id.group_info_group_name_label);
@@ -66,7 +66,6 @@ public class GroupInfoActivity extends Activity implements OnClickListener {
 		txtv_time_actual = (TextView)findViewById(R.id.group_info_time_actual);
 		txtv_members_label = (TextView)findViewById(R.id.group_info_lv_label);
 		lstvw_participants = (ListView)findViewById(R.id.group_info_lv_participants);
-		
 		btn_join_leave_group = (Button)findViewById(R.id.button_join_and_leave_group);
 		
 		btn_join_leave_group.setOnClickListener(this);

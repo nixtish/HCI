@@ -1,13 +1,25 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/create_group_id"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+<ScrollView 
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:id="@+id/create_group_parent_layout"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical"
+     android:paddingBottom="@dimen/activity_vertical_margin"
+     android:paddingLeft="@dimen/activity_horizontal_margin"
+     android:paddingRight="@dimen/activity_horizontal_margin"
+     android:paddingTop="@dimen/activity_vertical_margin" 
+     android:descendantFocusability="beforeDescendants" 
+     android:focusable="true"
+     android:focusableInTouchMode="true" > 
+     
+<LinearLayout 
+        
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:focusable="true"
+        android:focusableInTouchMode="true">
     
     <LinearLayout 
         android:orientation="horizontal"
@@ -26,7 +38,8 @@
 	        android:layout_marginLeft="20dp"
 	        android:layout_width = "fill_parent"
 	        android:layout_height="wrap_content"
-	        android:hint = "Enter group name" />    
+	        android:hint = "Enter group name"
+	        android:singleLine="true" />    
       
     </LinearLayout>
     
@@ -45,7 +58,7 @@
     
 	    <Spinner
 	        android:id="@+id/create_group_class_selector"
-	        android:layout_width="match_parent"
+	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_marginLeft="20dp"
 	        android:text="Select Class"/>
@@ -79,26 +92,56 @@
         android:layout_height="wrap_content">
          
          <TextView
-             android:id="@+id/txtv_select_time_label"
+             android:id="@+id/txtv_select_day_label"
              android:layout_marginTop="1dp"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:text = "Select Day and time:"
+             android:text = "Select Day:"
              android:textSize="17dp" />
          
-         <EditText
-	        android:id="@+id/enter_select_time"
-	        android:layout_marginTop="1dp"
-	        android:layout_marginLeft="20dp"
-	        android:layout_width = "fill_parent"
-	        android:layout_height="wrap_content"
-	        android:hint = "Enter time" /> 
-         
+         <Spinner 
+             android:id="@+id/spinner_select_day"
+             android:layout_width="fill_parent"
+             android:layout_marginLeft="15dp"
+             android:padding="5dp"
+             android:layout_height="wrap_content"/>
          
      </LinearLayout>
-    
-      
-    <Button
+     	        
+         <LinearLayout 
+             android:orientation="horizontal"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content">
+             
+             <TextView
+             android:id="@+id/txtv_enter_time_label"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text = "Enter time:"
+             android:textSize="17dp" />
+             
+             <EditText 
+                 android:id="@+id/edittxt_enter_time"
+                 android:layout_marginTop="1dp"
+	        	 android:layout_marginLeft="20dp"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:singleLine="true" />
+                 "
+         </LinearLayout>
+         
+        "
+         
+         <EditText 
+          android:id="@+id/edit_text_additional_comments"
+          android:layout_marginTop="3dp"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:singleLine="false"
+          android:layout_gravity="top|start"
+          android:hint="Enter additional comments here"/>"
+        
+      <Button
         android:id="@+id/button_to_add_people"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -121,6 +164,8 @@
         android:paddingRight="2dp" >
     </ListView>
     
+      
+    
     <Button
         android:id="@+id/button_to_create_group"
         android:layout_width="fill_parent"
@@ -131,3 +176,4 @@
         android:text = "Create Group" />
     
 </LinearLayout>
+</ScrollView> 
