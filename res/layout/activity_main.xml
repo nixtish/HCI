@@ -10,29 +10,44 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.hci.MainActivity" >
     
+    
+    
       
     <Button
         android:id="@+id/button_searchGroup"
+        android:layout_marginTop="15dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_searchGroup" />
+        android:text="@string/button_searchGroup"
+        android:background="@drawable/btn_pressed" />
+   
     
     <Button
         android:id="@+id/button_createGroup"
+        android:layout_marginTop="30dp"
         android:layout_width = "fill_parent"
         android:layout_height = "wrap_content"
-        android:text = "@string/button_createGroup" />
+        android:text = "@string/button_createGroup"
+        android:background="@drawable/btn_pressed"
+        android:focusableInTouchMode="true"
+        style="?android:attr/selectableItemBackground" />
     
     <Button
         android:id="@+id/button_userSchedule"
+        android:layout_marginTop="30dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_Schedule" />
+        android:text="@string/button_Schedule" 
+        android:background="@drawable/btn_pressed"
+        style="?android:attr/selectableItemBackground"/>
     
     <Button
         android:id="@+id/button_mygroups"
+        android:layout_marginTop="30dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_mygroups"  />
+        android:text="@string/button_mygroups" 
+        android:background="@drawable/btn_pressed"
+        style="?android:attr/selectableItemBackground" />
         
 </LinearLayout>

@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.R.bool;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,6 +26,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
@@ -31,8 +34,6 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.SaveCallback;
-
-
 
 public class CreateGroupActivity extends Activity implements OnClickListener,OnItemSelectedListener{
 	
@@ -43,6 +44,12 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 	private  Spinner locations_spinner;
 	private static int previouslyFetchedPosition;
 	private ListView membersListVIew;
+	private TextView lbl_grp_name;
+	private TextView lbl_class_name;
+	private TextView lbl_location_name;
+	private TextView lbl_time;
+	private EditText edit_text_time;
+	
 	public static List<Model> members = new ArrayList<Model>();
 	private ArrayList<String> groupMembers = new ArrayList<String>();
 	
@@ -60,12 +67,23 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 		
 		setContentView(R.layout.create_group);
 
+		
+		ActionBar actionBar = getActionBar();
+		actionBar.setBackgroundDrawable(new ColorDrawable(0xFF660200));
+		
+		
 		et_group_name = (EditText) findViewById(R.id.enter_group_name_to_create);
 		bt_create_group = (Button)findViewById(R.id.button_to_create_group);
 		bt_add_people = (Button)findViewById(R.id.button_to_add_people);
 		classes_spinner = (Spinner)findViewById(R.id.create_group_class_selector);
 		locations_spinner = (Spinner)findViewById(R.id.create_group_location_selection);
 		membersListVIew = (ListView)findViewById(R.id.create_group_list_view);
+		lbl_class_name = (TextView)findViewById(R.id.txtv_select_class_label);
+		lbl_grp_name = (TextView)findViewById(R.id.txtv_enter_group_name_label);
+		lbl_location_name = (TextView)findViewById(R.id.txtv_select_location_label);
+	//	lbl_time = (TextView)findViewById(R.id.txtv_select_time_label);
+		
+	//	edit_text_time = (EditText)findViewById(R.id.enter_select_time);
 		
 		previouslyFetchedPosition = -1;
 		Log.d(TAG,"class list ::: " + MainActivity.classList);

@@ -3,9 +3,11 @@ package com.example.hci;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,6 +33,9 @@ public class AddGroupMembersActivity extends ListActivity implements OnClickList
 		ArrayAdapter<Model> adapter = new InteractiveArrayAdapter(this,
 		        CreateGroupActivity.members);
 			setListAdapter(adapter);
+			
+			ActionBar actionBar = getActionBar();
+			 actionBar.setBackgroundDrawable(new ColorDrawable(0xFF660200));
 		    
 			bt_add_members = (Button) findViewById(R.id.button_to_add_members);
 //			bt_add_members.setVisibility(View.INVISIBLE);

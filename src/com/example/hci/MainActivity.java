@@ -1,10 +1,13 @@
 package com.example.hci;
 
-
 import java.util.ArrayList;
 import java.util.List;
+
+import android.app.ActionBar;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -19,6 +22,7 @@ import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.auth.UserRecoverableAuthException;
 import com.google.android.gms.common.AccountPicker;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+
 import com.parse.FindCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -32,6 +36,7 @@ public class MainActivity extends Activity implements OnClickListener
 	private Button btn_create_group;
 	private Button btn_user_schedule;
 	private Button btn_mygroups;
+	private ImageView imgv_bckgrnd_main;
 //	private ImageView imgview_main;
 	
 	@Override
@@ -39,6 +44,7 @@ public class MainActivity extends Activity implements OnClickListener
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+
 		  Parse.initialize(this, "B5BeLGhtq3GCbKJBWgigtklJSmZW2N2UbtFa6Lhi", "psVT9n6D8BO24FQkaj9ZHXwE35Oy17rqALD5iT3s");
 		  if(classList.isEmpty())
 		  {
@@ -60,10 +66,23 @@ public class MainActivity extends Activity implements OnClickListener
 		// Instantiate all UI elements
 		
 		
+ 
+		 
+		 // Change action bar color
+		 ActionBar actionBar = getActionBar();
+		 actionBar.setBackgroundDrawable(new ColorDrawable(0xFF660200));
+		/* ActionBar actionBar = getSupportActionBar();
+		 actionBar.hide();*/
+		
+		// Instantiate all UI elements
+		 	 
+	//	imgv_bckgrnd_main = (ImageView)findViewById(R.id.imgvw_main_activity);
+
 		btn_search_group = (Button) findViewById(R.id.button_searchGroup);
 		btn_create_group = (Button) findViewById(R.id.button_createGroup);
 		btn_user_schedule= (Button) findViewById(R.id.button_userSchedule);
 		btn_mygroups     = (Button) findViewById(R.id.button_mygroups);
+		
 		
 		btn_create_group.setOnClickListener(this);
 		btn_search_group.setOnClickListener(this);
@@ -101,16 +120,20 @@ public class MainActivity extends Activity implements OnClickListener
 		if (id == R.id.button_searchGroup) {
 			Intent i1 = new Intent(this, SearchGroupActivity.class);
 			startActivity(i1);
+			overridePendingTransition(R.animator.activity_switcher1s, R.animator.activity_switchers1);
 		} else if (id == R.id.button_createGroup) {
 			Intent i2 = new Intent(this, CreateGroupActivity.class);
-		//	i2.putExtra(this, CreateGroupActivity.class);
+			//	i2.putExtra(this, CreateGroupActivity.class);
 			startActivity(i2);
+			overridePendingTransition(R.animator.activity_switcher1s, R.animator.activity_switchers1);
 		} else if (id == R.id.button_userSchedule) {
 			Intent i3 = new Intent(this, UserScheduleActivity.class);
 			startActivity(i3);
+			overridePendingTransition(R.animator.activity_switcher1s, R.animator.activity_switchers1);
 		} else if (id == R.id.button_mygroups) {
-			Intent i4 = new Intent(this, SignInActivity.class);
+			Intent i4 = new Intent(this, MyGroupsActivity.class);
 			startActivity(i4);
+			overridePendingTransition(R.animator.activity_switcher1s, R.animator.activity_switchers1);
 		}
 		
 	}

@@ -4,7 +4,22 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
     
-    <!-- Populate the layout with a listview of all groups and a single cross button next to each group to leave the group 
-         Should also make use of the DisplayGroupInfo fragment-->
+             
+         <ListView
+             android:id="@+id/my_groups_list_view"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" />
+         
+         <Button
+             android:id="@+id/button_my_groups_leave_group"
+             android:layout_gravity="center_horizontal"
+             android:layout_marginTop="30dp"
+             android:layout_width="150dp"
+             android:layout_height="wrap_content"
+             android:background="@drawable/btn_pressed"
+             android:text = "Leave Group" />
+         
+         
+         
     
     </LinearLayout>

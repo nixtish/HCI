@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">HCI</string>
+    <string name="app_name">Group Study</string>
     <string name="hello_world">Hello world!</string>
     <string name="greet_me">Greet Me</string>
     <string name="action_settings">Settings</string>
     <string name="button_searchGroup">Search Group</string>
     <string name="button_createGroup">Create Group</string>
-    <string name="button_Schedule">Schedule</string>
+    <string name="button_Schedule">My Schedule</string>
     <string name="button_mygroups">My groups</string>
+    <string name="leave_join_group">Join Group</string>
     
     
 

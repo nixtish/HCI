@@ -12,9 +12,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/user_group"
+        android:icon="@drawable/user_phd_group_111"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"    >
            
         <activity
             android:name=".MainActivity"
@@ -29,14 +29,25 @@
         <meta-data android:name="com.google.android.gms.version"
         android:value="@integer/google_play_services_version" />
       
-        <activity android:name="com.example.hci.SearchGroupActivity"></activity>
+        <activity android:name="com.example.hci.SearchGroupActivity"
+            	  android:label="Search Group"> </activity>
         <activity android:name="com.example.hci.SignInActivity"></activity>
         
 
-        <activity android:name="com.example.hci.UserScheduleActivity"></activity>
-        <activity android:name="com.example.hci.CreateGroupActivity"></activity>
+
         
-        <activity android:name="com.example.hci.AddGroupMembersActivity"></activity>
+        <activity android:name="com.example.hci.AddGroupMembersActivity"
+                  android:label ="Add Members"></activity>
+
+        <activity android:name="com.example.hci.UserScheduleActivity"
+                  android:label="My Schedule" ></activity>
+        <activity android:name="com.example.hci.CreateGroupActivity"
+                  android:label="Create Group"></activity>
+        <activity android:name="com.example.hci.GroupInfoActivity"
+                  android:label="Group Details"></activity>
+        <activity android:name="com.example.hci.MyGroupsActivity"
+                  android:label="My Groups"></activity>
+
         
     </application>
 
