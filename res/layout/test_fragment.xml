@@ -1,17 +1,28 @@
-<LinearLayout
-    android:orientation="vertical"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+     android:paddingLeft="8dp"
+     android:paddingRight="8dp">
+ 
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="#CCCCCC"
+        android:dividerHeight="1dp"
+        android:paddingLeft="2dp" >
+    </ListView>
     
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-    
-    
-    <Button
-        android:id="@+id/btn_test"
+	<Button
+        android:id="@+id/button_to_add_members"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" 
-        android:text = "test" />
-        
-    
+        android:layout_height="wrap_content"
+        android:text="Done" />
+	
 </LinearLayout>

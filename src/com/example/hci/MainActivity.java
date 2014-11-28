@@ -1,8 +1,12 @@
 package com.example.hci;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,10 +19,15 @@ import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.auth.UserRecoverableAuthException;
 import com.google.android.gms.common.AccountPicker;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.parse.FindCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 public class MainActivity extends Activity implements OnClickListener
 {
-
+	static public List<String> classList = new ArrayList<String>();
 	private Button btn_search_group;
 	private Button btn_create_group;
 	private Button btn_user_schedule;
@@ -30,7 +39,26 @@ public class MainActivity extends Activity implements OnClickListener
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		  Parse.initialize(this, "B5BeLGhtq3GCbKJBWgigtklJSmZW2N2UbtFa6Lhi", "psVT9n6D8BO24FQkaj9ZHXwE35Oy17rqALD5iT3s");
+		  if(classList.isEmpty())
+		  {
+		  ParseQuery<ParseObject> query = ParseQuery.getQuery("User");
+		  query.whereEqualTo("unity_id", "kdhanas");
+		  query.findInBackground(new FindCallback<ParseObject>() {
+				@Override
+				public void done(List<ParseObject> classlist, ParseException e) {
+					// TODO Auto-generated method stub
+					 if (e == null) {
+						 	classList = classlist.get(0).getList("class_list");
+				            Log.d("main", "Retrieved " + classList);
+				        } else {
+				            Log.d("main", "Error: " + e.getMessage());
+				        }
+				}
+			});
+		  }
 		// Instantiate all UI elements
+		
 		
 		btn_search_group = (Button) findViewById(R.id.button_searchGroup);
 		btn_create_group = (Button) findViewById(R.id.button_createGroup);

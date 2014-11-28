@@ -1,9 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:id="@+id/create_group_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical" >
-    
       
     <EditText
         android:id="@+id/enter_group_name_to_create"
@@ -27,9 +27,22 @@
         android:id="@+id/button_to_add_people"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Add participants" />
+        android:text="Choose Members" />
     
-        
+      <ListView
+        android:id="@+id/create_group_list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:divider="#CCCCCC"
+        android:dividerHeight="1dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp" >
+    </ListView>
+    
     <Button
         android:id="@+id/button_to_create_group"
         android:layout_width="fill_parent"

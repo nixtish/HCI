@@ -36,6 +36,8 @@
         <activity android:name="com.example.hci.UserScheduleActivity"></activity>
         <activity android:name="com.example.hci.CreateGroupActivity"></activity>
         
+        <activity android:name="com.example.hci.AddGroupMembersActivity"></activity>
+        
     </application>
 
 </manifest>
