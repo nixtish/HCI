@@ -17,6 +17,10 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
     
+      <!--  <color name="action_bar_color">0xFF660200</color>
+     -->
+
+    
     
 
 </resources>

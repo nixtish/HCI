@@ -50,6 +50,7 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 	private TextView lbl_class_name;
 	private TextView lbl_location_name;
 	private TextView lbl_day;
+	private TextView lbl_time;
 	private EditText edit_text_time;
 	private EditText edit_text_day;
 	private Spinner spnr_select_day;
@@ -98,9 +99,18 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 		lbl_grp_name = (TextView)findViewById(R.id.txtv_enter_group_name_label);
 		lbl_location_name = (TextView)findViewById(R.id.txtv_select_location_label);
 		lbl_day = (TextView)findViewById(R.id.txtv_select_day_label);
+		lbl_time = (TextView)findViewById(R.id.txtv_enter_time_label);
 		spnr_select_day = (Spinner)findViewById(R.id.spinner_select_day);
 		edit_text_time = (EditText)findViewById(R.id.edittxt_enter_time);
 		edit_text_additional_comments = (EditText)findViewById(R.id.edit_text_additional_comments);
+		
+		
+		
+		lbl_class_name.setTextColor(0xFF660200);
+		lbl_grp_name.setTextColor(0xFF660200); 
+		lbl_location_name.setTextColor(0xFF660200);
+		lbl_day.setTextColor(0xFF660200);
+		lbl_time.setTextColor(0xFF660200);
 		
 		previouslyFetchedPosition = -1;
 		Log.d(TAG,"class list ::: " + MainActivity.classList);

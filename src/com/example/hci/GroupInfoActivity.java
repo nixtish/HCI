@@ -54,6 +54,11 @@ public class GroupInfoActivity extends Activity implements OnClickListener {
 		
 		ActionBar actionBar = getActionBar();
 	    actionBar.setBackgroundDrawable(new ColorDrawable(0xFF660200));
+	    
+	    Integer intColor = 0xFF660200;
+	    String hexColor = "#" + Integer.toHexString(intColor).substring(2);
+	    
+	   
 		 
 		 
 		txtv_group_name_label = (TextView)findViewById(R.id.group_info_group_name_label);
@@ -67,6 +72,15 @@ public class GroupInfoActivity extends Activity implements OnClickListener {
 		txtv_members_label = (TextView)findViewById(R.id.group_info_lv_label);
 		lstvw_participants = (ListView)findViewById(R.id.group_info_lv_participants);
 		btn_join_leave_group = (Button)findViewById(R.id.button_join_and_leave_group);
+		
+		txtv_group_name_label.setTextColor(0xFF660200);
+		txtv_class_name_label.setTextColor(0xFF660200);
+		txtv_class_name_label.setTextColor(0xFF660200);
+		txtv_location_label.setTextColor(0xFF660200);
+		txtv_members_label.setTextColor(0xFF660200);
+		txtv_time_label.setTextColor(0xFF660200);
+		
+		//txtv_group_name_actual.setTextColor(0xFF660200);
 		
 		btn_join_leave_group.setOnClickListener(this);
 		

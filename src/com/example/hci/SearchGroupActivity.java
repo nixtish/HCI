@@ -60,6 +60,7 @@ public class SearchGroupActivity extends Activity implements OnClickListener{
 		spnr_class = (Spinner) findViewById(R.id.spinner_class_selector_search_group);
 		btn_search_grp = (Button) findViewById(R.id.button_to_execute_group_search);
 		txtv_search_results_label = (TextView)findViewById(R.id.tv_dynamic_search_result_label);
+		txtv_search_results_label.setTextColor(0xFF660200);
 		//txtv_search_results_label.setVisibility(0);
 	    populateClassSpinner();
 		btn_search_grp.setOnClickListener(this);
