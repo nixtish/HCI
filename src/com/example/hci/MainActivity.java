@@ -128,6 +128,7 @@ public class MainActivity extends Activity implements OnClickListener
 			overridePendingTransition(R.animator.activity_switcher1s, R.animator.activity_switchers1);
 		} else if (id == R.id.button_userSchedule) {
 			Intent i3 = new Intent(this, UserScheduleActivity.class);
+			//i3.putExtra(SignInActivity.TYPE_KEY, SignInActivity.Type.BACKGROUND.name());
 			startActivity(i3);
 			overridePendingTransition(R.animator.activity_switcher1s, R.animator.activity_switchers1);
 		} else if (id == R.id.button_mygroups) {
