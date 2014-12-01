@@ -41,7 +41,7 @@ public class SearchGroupActivity extends Activity implements OnClickListener{
 	{
 
 	      ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>
-	                    (this, android.R.layout.simple_spinner_item,class_text);
+	                    (this, android.R.layout.simple_spinner_item,MainActivity.classList);
           dataAdapter.setDropDownViewResource
 	                    (android.R.layout.simple_spinner_dropdown_item);
                   spnr_class.setAdapter(dataAdapter);
@@ -94,7 +94,7 @@ public class SearchGroupActivity extends Activity implements OnClickListener{
 					ft2.commit();*/
 			  	  
 			  	Intent i3 = new Intent(getActivity(), GroupInfoActivity.class);	
-			  	i3.putExtra("From_where", 0 );
+			  	i3.putExtra("From_where", false );
 			  	i3.putExtra("group_name", l.getItemAtPosition(position).toString());			  	
 			  	startActivity(i3);
 			  }

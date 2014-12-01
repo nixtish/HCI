@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ActionBar;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -22,12 +21,15 @@ import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.auth.UserRecoverableAuthException;
 import com.google.android.gms.common.AccountPicker;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-
 import com.parse.FindCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseInstallation;
 import com.parse.ParseObject;
+import com.parse.ParsePush;
 import com.parse.ParseQuery;
+import com.parse.PushService;
+import com.parse.SaveCallback;
 
 public class MainActivity extends Activity implements OnClickListener
 {
@@ -49,7 +51,7 @@ public class MainActivity extends Activity implements OnClickListener
 		  if(classList.isEmpty())
 		  {
 		  ParseQuery<ParseObject> query = ParseQuery.getQuery("User");
-		  query.whereEqualTo("unity_id", "kdhanas");
+		  query.whereEqualTo("unity_id", "jclees");
 		  query.findInBackground(new FindCallback<ParseObject>() {
 				@Override
 				public void done(List<ParseObject> classlist, ParseException e) {
@@ -88,6 +90,21 @@ public class MainActivity extends Activity implements OnClickListener
 		btn_search_group.setOnClickListener(this);
 		btn_user_schedule.setOnClickListener(this);
 		btn_mygroups.setOnClickListener(this);
+		
+//		PushService.setDefaultPushCallback(this, MainActivity.class);
+        ParseInstallation.getCurrentInstallation().saveInBackground();
+//		
+//		ParsePush.subscribeInBackground("", new SaveCallback() {
+//			  @Override
+//			  public void done(ParseException e) {
+//			    if (e == null) {
+//			      Log.d("com.parse.push", "successfully subscribed to the broadcast channel.");
+//			    } else {
+//			      Log.e("com.parse.push", "failed to subscribe for push", e);
+//			    }
+//			  }
+//			});
+//
 	
 	}
 

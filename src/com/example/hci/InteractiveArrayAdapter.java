@@ -37,6 +37,14 @@ public View getView(int position, View convertView, ViewGroup parent) {
     view = inflator.inflate(R.layout.rowbuttonlayout, null);
     final ViewHolder viewHolder = new ViewHolder();
     viewHolder.text = (TextView) view.findViewById(R.id.label);
+    viewHolder.text.setOnClickListener(new View.OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Log.d("asasa","sasaas");
+		}
+	});
     viewHolder.checkbox = (CheckBox) view.findViewById(R.id.check);
     viewHolder.checkbox
         .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -60,6 +68,12 @@ public View getView(int position, View convertView, ViewGroup parent) {
   holder.text.setText(list.get(position).getName());
   holder.checkbox.setChecked(list.get(position).isSelected());
   return view;
+}
+
+@Override
+public boolean isEnabled(int position) {
+	// TODO Auto-generated method stub
+	return true;
 }
 
 }

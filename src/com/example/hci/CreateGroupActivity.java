@@ -3,6 +3,9 @@ package com.example.hci;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.R.bool;
 import android.app.ActionBar;
 import android.app.Activity;
@@ -33,7 +36,9 @@ import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseInstallation;
 import com.parse.ParseObject;
+import com.parse.ParsePush;
 import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 
@@ -123,7 +128,7 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 		populateClassSpinner();
 		populateLocationsSpinner();
 		populateDaySpinner();
-		generateListView();
+//		generateListView();
 		
 		
 		
@@ -141,6 +146,10 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 			group.put("group_name", et_group_name.getText().toString());
 			group.put("location",locations_spinner.getSelectedItem().toString());
 			group.put("class_name", classes_spinner.getSelectedItem().toString());
+			groupMembers.add("John Cleese");
+			group.put("members", groupMembers);
+			group.put("time_day",spnr_select_day.getSelectedItem().toString()+" - "+edit_text_time.getText().toString());
+			group.put("comments", edit_text_additional_comments.getText().toString());
 			group.saveInBackground(new SaveCallback() {
 				@Override
 				public void done(ParseException e) {
@@ -169,6 +178,31 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setMessage("Enter Group Name!").setNegativeButton("Cancel", dialogClickListener).show();
 			}
+			
+			JSONObject obj;
+			try {
+				Log.d("ascsac","button clicked");
+				obj =new JSONObject();
+				obj.put("alert","New Group Created!");
+				obj.put("action","com.example.hci.AcceptGroup");
+				obj.put("group_name", et_group_name.getText().toString());
+				obj.put("customdata","Sakthi created " + et_group_name.getText().toString() + " group and added you!");
+				
+				ParsePush push = new ParsePush();
+				ParseQuery query = ParseInstallation.getQuery();
+				
+				 
+				// Notification for Android users
+				query.whereEqualTo("channels","hi");
+				push.setQuery(query);
+				push.setData(obj);
+				push.sendInBackground(); 
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
 		}else if (v.getId() == R.id.button_to_add_people) {
 			
 			if(previouslyFetchedPosition != classes_spinner.getSelectedItemPosition())
@@ -198,7 +232,7 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 						 for (int i = 0; i < categories.size(); i++) {
 						       String c = categories.get(i).getString("name");
 
-						       if (!c.equals("Sakthi")) {
+						       if (!c.equals("John Cleese")) {
 						    	 members.add(get(c));
 						    	 
 //						    	 adapter.notifyDataSetChanged();
@@ -305,7 +339,7 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 	    				groupMembers.add(members.get(i).getName());
 	    			}	    			
 	    		}
-	            membersListVIew.invalidateViews();
+//	            membersListVIew.invalidateViews();
 	        
 	        }
 	        if (resultCode == RESULT_CANCELED) {
