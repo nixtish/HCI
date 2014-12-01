@@ -186,7 +186,7 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 				obj.put("alert","New Group Created!");
 				obj.put("action","com.example.hci.AcceptGroup");
 				obj.put("group_name", et_group_name.getText().toString());
-				obj.put("customdata","Sakthi created " + et_group_name.getText().toString() + " group and added you!");
+				obj.put("customdata","John Cleese created " + et_group_name.getText().toString() + " group and added you!");
 				
 				ParsePush push = new ParsePush();
 				ParseQuery query = ParseInstallation.getQuery();
@@ -271,7 +271,7 @@ public class CreateGroupActivity extends Activity implements OnClickListener,OnI
 	public void populateLocationsSpinner()
 	{
 		
-		String[] demo = {"Hunt Library","D.H Hill","EB1", "EB2", "EB3"};
+		String[] demo = {"Hunt Library","D.H Hill","EB1", "EB2", "EB3","2321 Hunt"};
 	         
 	        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>
 	                     (this, android.R.layout.simple_spinner_item,demo);

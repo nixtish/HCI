@@ -86,7 +86,7 @@ public class SearchGroupActivity extends Activity implements OnClickListener{
 
 			  @Override
 			  public void onListItemClick(ListView l, View v, int position, long id) {
-			  	  Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+//			  	  Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
 			  	  
 			  	  /*DisplayGroupInfo dgi_fragment = new DisplayGroupInfo();
 					FragmentTransaction ft2 = getFragmentManager().beginTransaction();

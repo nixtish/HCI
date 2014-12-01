@@ -13,10 +13,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.accounts.AccountManager;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.Activity;
@@ -94,6 +97,10 @@ public class SignInActivity extends Activity implements android.view.View.OnClic
     GoogleAccountCredential credential;
     
     com.google.api.services.calendar.Calendar client;
+    
+    
+    private ImageView imgv_sign_in;
+    private ImageView imgv_stdy;
 
     
     @Override
@@ -104,11 +111,15 @@ public class SignInActivity extends Activity implements android.view.View.OnClic
         Logger.getLogger("com.google.api.client").setLevel(LOGGING_LEVEL);
         // view and menu
         setContentView(R.layout.sign_in);
+        getActionBar().hide();
+        
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        mOut = (TextView) findViewById(R.id.message);
+     //   mOut = (TextView) findViewById(R.id.message);
+        imgv_sign_in = (ImageView)findViewById(R.id.imgv_sign_in);
+        //imgv_stdy = (ImageView)findViewById(R.id.imgv_sign_in_stdy);
         
         findViewById(R.id.sign_in_button).setOnClickListener(this);
-
         //Bundle extras = getIntent().getExtras();
         //requestType = Type.valueOf(extras.getString(TYPE_KEY));
        // setTitle(getTitle() + " - " + requestType.name());

@@ -184,16 +184,16 @@ public class GroupInfoActivity extends Activity implements OnClickListener,OnIte
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		answer.addUnique("members", "Gandalf the Grey");
+		answer.addUnique("members", "John Cleese");
 		answer.saveInBackground();
 		JSONObject obj;
 		try {
 			Log.d("ascsac","button clicked");
 			obj =new JSONObject();
-			obj.put("alert","Gandalf the Grey Joined your group!");
+			obj.put("alert","John Cleese Joined your group!");
 			obj.put("action","com.example.hci.AcceptGroup");
 			obj.put("group_name", test.toString());
-			obj.put("customdata","Gandalf the Grey joined "+ test + "!");
+			obj.put("customdata","John Cleese joined "+ test + "!");
 			
 			ParsePush push = new ParsePush();
 			ParseQuery query = ParseInstallation.getQuery();
